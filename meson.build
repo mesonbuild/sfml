@@ -6,7 +6,6 @@ project('sfml', 'cpp',
 
 cpp = meson.get_compiler('cpp')
 
-stb_dep = dependency('stb')
 openal_dep = dependency('openal')
 thread_dep = dependency('threads')
 gl_dep = dependency('gl')

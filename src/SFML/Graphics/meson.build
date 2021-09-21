@@ -40,10 +40,12 @@ graphics_sources += files(
     'RenderTextureImplDefault.cpp',
 )
 
+stb = include_directories('../../../extlibs/headers/stb_image')
+
 graphics_lib = library('sfml-graphics',
     graphics_sources,
     cpp_args: get_option('default_library') == 'shared' ? ['-DSFML_GRAPHICS_EXPORTS'] : ['-DSFML_STATIC'],
-    include_directories: [pub_inc, priv_inc],
+    include_directories: [pub_inc, priv_inc, stb],
     link_with: [window_lib, system_lib],
-    dependencies: [gl_dep, stb_dep, freetype_dep],
+    dependencies: [gl_dep, freetype_dep],
 )
